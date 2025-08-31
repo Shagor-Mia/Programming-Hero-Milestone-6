@@ -35,12 +35,10 @@ console.log(employee);
 // 29.7
 // object and array destructuring
 const brand = { name: "samsung", model: "g2", price: 345 };
-console.log(brand.model);
-const {
-  name,
-  price,
-  sale = 123,
-} = { name: "samsung", model: "g2", price: 345 };
+const { price } = brand;
+console.log(price);
+
+const { name, sale = 123 } = { name: "samsung", model: "g2", price: 345 };
 
 console.log(sale);
 
