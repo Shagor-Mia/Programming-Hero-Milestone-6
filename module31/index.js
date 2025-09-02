@@ -40,9 +40,16 @@ if (!!data === true) {
 //31-5 block scope, global scope, hoisting
 
 // 31-6 (optional) Callback function and pass different functions
+const hello = (name = "sagor", message, cb) => {
+  console.log(name);
+  cb(message);
+};
+const greeting = (message = "good evening") => {
+  console.log(message);
+};
+hello("ali", "good night", greeting);
 
 // 31-7 (advanced) function arguments pass by reference pass by value
-
 // primitive data (string,number,boolean etc) are passedByValue
 function passedByValue(a, b) {
   a = a + 2;
@@ -82,3 +89,26 @@ function arg(a, b) {
 arg(1, 2, 3, 4);
 
 // 31-8 (advanced) Explore about Closure
+
+const outerFunc = (name) => {
+  let life = 3;
+  const closureFunc = () => {
+    if (life > 0) {
+      life--;
+      console.log(`${name} you have left ${life} life.`);
+    } else {
+      console.log(`${name},Your life is finished!`);
+    }
+  };
+  return closureFunc;
+};
+
+const karim = outerFunc("karim");
+const rahim = outerFunc("rahim");
+karim();
+rahim();
+rahim();
+console.log(`++++++++++++`);
+rahim();
+karim();
+karim();
