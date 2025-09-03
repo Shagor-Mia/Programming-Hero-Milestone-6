@@ -4,8 +4,33 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
+    <style>
+      #post-container {
+        max-width: 1020px;
+        margin: 50px auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+        row-gap: 20px;
+      }
+      .post-card {
+        border: 1px solid rebeccapurple;
+        padding: 5px;
+        height: 100%;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px 1px gray;
+      }
+      .post-card p {
+        text-align: justify;
+      }
+    </style>
   </head>
   <body>
+    <button onclick="loadData()">loadData</button>
+    <button onclick="loadPosts()">postData</button>
+    <!-- <ul id="post-container"></ul> -->
+    <h1>All Card</h1>
+    <div id="post-container"></div>
     <script src="./json.js"></script>
   </body>
 </html>
